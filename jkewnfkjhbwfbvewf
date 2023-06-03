@@ -1,0 +1,422 @@
+local Screen = script.Parent.Screen.Screen2.SurfaceGui
+local SendEvent = script.Parent.SendEvent
+local RecieveEvent = script.Parent.RecieveEvent
+local Net = script.Parent.Parent.Parent.Network
+local gui = script.Parent.Screen.Screen2.SurfaceGui
+local Parcel = require(9428572121)
+local Scan = script.Parent["Scan Handeler"]
+local Tri = script.Parent["TRG-Tri"].TriLight
+local STri = script.Parent.Scanner.Light
+local Cscreen = script.Parent["Reader V2"].Screen.SurfaceGui
+local Mstr = require(script.Parent.Parent.Parent.Settings.MasterConfig)
+local payscript = script.Parent["Reader V2"].Touchpart.Script
+if Parcel:Whitelist("64057c1e93b2a5cbfc524ec5", "k5d86kl4psw6t6j2d4snkrhf657r") then
+	payscript.Disabled = true
+	script.Parent["Scan Handeler2"].Disabled = true
+	Screen.Utility.Shutdown.Visible = false
+	Screen.Utility.Visible = false
+	Screen.Application.Visible = false
+	Screen.Application.ScanScreen.Visible = false
+	Screen.LaneConnection.Done.Visible = false
+	Screen.LaneConnection.Visible = false
+	Tri.Transparency = 0.2
+	Tri.Material = Enum.Material.Neon
+	Tri.Color = Color3.fromRGB(255, 255, 255)
+	STri.Transparency = 0.2
+	STri.Material = Enum.Material.Neon
+	STri.Color = Color3.fromRGB(255, 255, 255)
+	Scan.Disabled = true
+	--Cscreen.lcs_inv.Visible = false
+	wait(5)
+	Screen.Boot.Visible = true
+	Cscreen.LaneBoot.Visible = true
+	Screen.Boot.Stage1.Visible = true
+	wait(5)
+	Screen.Boot.Stage1.Visible = false
+	Screen.Boot.Stage2.Visible = true
+	wait(5)
+	Screen.Boot.Stage2.Visible = false
+	Screen.Boot.Stage3.Visible = true
+	wait(2)
+	Screen.Boot.Stage3.Visible = false
+	wait(1)
+	Screen.Boot.Stage4.Visible = true
+	Screen.Boot.Stage4.TextLabel.Visible = false
+	Screen.Boot.Stage4.Loadin.Visible = false
+	Screen.Boot.Stage4.AS.Visible = false
+	Screen.Boot.Stage4.Frame.Visible = false
+	wait(.5)
+	Screen.Boot.Stage4.AS.Visible = true
+	Screen.Boot.Stage4.Frame.Visible = true
+	wait(1)
+	Screen.Boot.Stage4.Loadin.Visible = true
+	wait(5)
+	Screen.Boot.Stage4.Loadin.Visible = false
+	Screen.Boot.Stage4.TextLabel.Visible = true
+	wait(5)
+	Screen.Boot.Stage4.TextLabel.Visible = false
+	Screen.Boot.Stage4.Visible = false
+	Screen.Boot.Stage5.Frame.Visible = false
+	Screen.Boot.Stage5.TextLabel.Visible = false
+	Screen.Boot.Stage5.Dect.Visible = false
+	Screen.Boot.Stage5.Visible = true
+	Screen.Boot.Stage5.Frame.Visible = true
+	wait(5)
+	Screen.Boot.Stage5.TextLabel.Visible = true
+	wait(3)
+	Screen.Boot.Stage5.Dect.Visible = true
+	wait(2)
+	Screen.Boot.Stage5.Frame.Visible = false
+	Screen.Boot.Stage5.TextLabel.Visible = false
+	Screen.Boot.Stage5.Dect.Visible = false
+	Screen.Boot.Visible = false
+	Screen.LaneConnection.Visible = true
+	Screen.LaneConnection.please.Visible = true
+	wait(5)
+	Screen.LaneConnection.Connecting.Visible = true
+	Tri.Transparency = 0.2
+	Tri.Material = Enum.Material.Neon
+	Tri.Color = Color3.fromRGB(199, 255, 16)
+	wait(10)
+	Screen.LaneConnection.Connecting.Visible = false
+	Screen.LaneConnection.Done.Visible = true
+	Tri.Transparency = 0.2
+	Tri.Material = Enum.Material.Neon
+	Tri.Color = Color3.fromRGB(255, 255, 255)
+	wait(3)
+	Screen.LaneConnection.Visible = false
+	Screen.Application.Visible = true
+	Screen.Application.StartScreen.Visible = true
+	Screen.Application.Interventions.Visible = true
+	Screen.Application.Interventions.SystemMsgfoot.Visible = true
+	wait(5)
+	Screen.Application.Footer.Visible = true
+	Screen.Application.Interventions.SystemMsgfoot.Visible = false
+	Screen.Application.Interventions.Visible = false
+	Scan.Disabled = false
+	Cscreen.LaneBoot.Visible = false
+	Cscreen.Idle.Visible = true
+	Tri.Color = Color3.fromRGB(2, 255, 2)
+	STri.Color = Color3.fromRGB(2, 255, 2)
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://12830273010"
+	sound.Looped = false
+	sound.Parent = workspace
+	sound:Play()
+	sound.Volume = 5
+
+	Screen.Application.StartScreen.Start.Start.MouseButton1Click:Connect(function() -- Attach a function to your MouseButton1Click RBXScriptSignal
+
+		Screen.Application.StartScreen.Visible = false
+		Screen.Application.ScanScreen.Visible = true
+		Screen.Application.ScanScreen.Start.Visible = true
+	end)
+
+
+
+	Screen.Utility.Main.btn_Option5.MouseButton1Click:Connect(function()
+		local Screen = script.Parent.Parent.Parent.Parent.Parent.SurfaceGui
+		Screen.LaneConnection.please.Visible = false
+		Screen.LaneConnection.Done.Visible = false
+		Screen.LaneConnection.Connecting.Visible = false	
+		Screen.Application.Footer.Visible = false
+		Screen.Utility.Main.Visible = false	
+		Screen.Application.Visible = false
+		Screen.Utility.Visible = false
+		Screen.Boot.Visible = true
+		Screen.Boot.Stage1.Visible = true
+		wait(5)
+		Screen.Boot.Stage1.Visible = false
+		Screen.Boot.Stage2.Visible = true
+		wait(5)
+		Screen.Boot.Stage2.Visible = false
+		Screen.Boot.Stage3.Visible = true
+		wait(2)
+		warn("Boot Done Connecting To Lanes")
+		Screen.Boot.Visible = false
+		Screen.LaneConnection.Visible = true
+		Screen.LaneConnection.please.Visible = true
+		wait(5)
+		Screen.LaneConnection.Connecting.Visible = true
+		wait(10)
+		Screen.LaneConnection.Connecting.Visible = false
+		Screen.LaneConnection.Done.Visible = true
+		wait(3)
+		Screen.LaneConnection.Visible = false
+		Screen.Application.Visible = true
+		Screen.Application.StartScreen.Visible = true
+		Screen.Application.Interventions.Visible = true
+		Screen.Application.Interventions.SystemMsgfoot.Visible = true
+		wait(5)
+		Screen.Application.Footer.Visible = true
+		Screen.Application.Interventions.SystemMsgfoot.Visible = false
+		Screen.Application.Interventions.Visible = false
+	end)
+	
+	
+	
+	
+	
+	Screen.Utility.Main.Shutdown.MouseButton1Click:Connect(function()
+		Tri.Transparency = 0.2
+		Tri.Material = Enum.Material.SmoothPlastic
+		Tri.Color = Color3.fromRGB(99, 99, 99)
+		STri.Transparency = 0.2
+		STri.Material = Enum.Material.SmoothPlastic
+		STri.Color = Color3.fromRGB(99, 99, 99)
+		Scan.Disabled = true
+		Screen.Utility.Main.Visible = false
+		Screen.Utility.Shutdown.Visible = true
+		wait(10)
+		Screen.Utility.Shutdown.Visible = false
+		--Cscreen.Idle.Visible = false
+		print("ShutDown Complete")
+		script.Parent["Scan Handeler2"].Disabled = false
+		script.Disabled = true
+	end)
+	
+	
+	
+else
+	local Cscreen = script.Parent["Reader V2"].Screen.SurfaceGui
+	warn("TRG | User Or Group not whitelisted for product: Self Checkout System")	
+	Screen.Boot.LCS_Inv.Visible = true
+	Cscreen.lcs_inv.Visible = true
+	if Mstr.trionlcz then
+		Tri.Transparency = 0.2
+		Tri.Material = Enum.Material.Neon
+		Tri.Color = Color3.fromRGB(255, 0, 0)
+		STri.Transparency = 0.2
+		STri.Material = Enum.Material.Neon
+		STri.Color = Color3.fromRGB(255, 0, 0)
+	end
+end
+
+Screen.Application.ScanScreen.SideFrame.TextButton.MouseButton1Click:Connect(function()
+	Tri.Transparency = 0.2
+	Tri.Material = Enum.Material.SmoothPlastic
+	Tri.Color = Color3.fromRGB(99, 99, 99)
+	STri.Transparency = 0.2
+	STri.Material = Enum.Material.SmoothPlastic
+	STri.Color = Color3.fromRGB(255, 255, 255)
+	Cscreen.Idle.Visible = false
+	Cscreen.LaneBoot.Visible = false
+	Cscreen.Pay.Visible = true
+	Screen.Application.Interventions.Visible = true
+	Screen.Application.Interventions.ContinueOnR.Visible = true
+	script.Parent["Scan Handeler"].Disabled = true
+	script.Parent["Reader V2"].Touchpart.Script.Disabled = false
+	
+	
+	
+end)
+
+local function hideFrames(gui)
+	for _, child in ipairs(gui:GetChildren()) do
+		if child:IsA("Frame") then
+			child.Visible = false
+		elseif child:IsA("Frame") and child:FindFirstChildOfClass("Frame") then
+			hideFrames(child)
+		end
+	end
+end
+
+local Screen = script.Parent.Screen.Screen2.SurfaceGui
+local SendEvent = script.Parent.SendEvent
+local RecieveEvent = script.Parent.RecieveEvent
+local Net = script.Parent.Parent.Parent.Network
+local gui = script.Parent.Screen.Screen2.SurfaceGui
+local Parcel = require(9428572121)
+local Scan = script.Parent["Scan Handeler"]
+local Tri = script.Parent["TRG-Tri"].TriLight
+local STri = script.Parent.Scanner.Light
+local Cscreen = script.Parent["Reader V2"].Screen.SurfaceGui
+local Mstr = require(script.Parent.Parent.Parent.Settings.MasterConfig)
+local payscript = script.Parent["Reader V2"].Touchpart.Script
+if Parcel:Whitelist("64057c1e93b2a5cbfc524ec5", "k5d86kl4psw6t6j2d4snkrhf657r") then
+	payscript.Disabled = true
+	script.Parent["Scan Handeler2"].Disabled = true
+	Screen.Utility.Shutdown.Visible = false
+	Screen.Utility.Visible = false
+	Screen.Application.Visible = false
+	Screen.Application.ScanScreen.Visible = false
+	Screen.LaneConnection.Done.Visible = false
+	Screen.LaneConnection.Visible = false
+	hideFrames(gui)
+	Tri.Transparency = 0.2
+	Tri.Material = Enum.Material.Neon
+	Tri.Color = Color3.fromRGB(255, 255, 255)
+	STri.Transparency = 0.2
+	STri.Material = Enum.Material.Neon
+	STri.Color = Color3.fromRGB(255, 255, 255)
+	Scan.Disabled = true
+	--Cscreen.lcs_inv.Visible = false
+	wait(5)
+	Screen.Boot.Visible = true
+	Cscreen.LaneBoot.Visible = true
+	Screen.Boot.Stage1.Visible = true
+	wait(5)
+	Screen.Boot.Stage1.Visible = false
+	Screen.Boot.Stage2.Visible = true
+	wait(5)
+	Screen.Boot.Stage2.Visible = false
+	Screen.Boot.Stage3.Visible = true
+	wait(2)
+	Screen.Boot.Stage3.Visible = false
+	wait(1)
+	Screen.Boot.Stage4.Visible = true
+	Screen.Boot.Stage4.TextLabel.Visible = false
+	Screen.Boot.Stage4.Loadin.Visible = false
+	Screen.Boot.Stage4.AS.Visible = false
+	Screen.Boot.Stage4.Frame.Visible = false
+	wait(.5)
+	Screen.Boot.Stage4.AS.Visible = true
+	Screen.Boot.Stage4.Frame.Visible = true
+	wait(1)
+	Screen.Boot.Stage4.Loadin.Visible = true
+	wait(5)
+	Screen.Boot.Stage4.Loadin.Visible = false
+	Screen.Boot.Stage4.TextLabel.Visible = true
+	wait(5)
+	Screen.Boot.Stage4.TextLabel.Visible = false
+	Screen.Boot.Visible = false
+	Screen.LaneConnection.Visible = true
+	Screen.LaneConnection.please.Visible = true
+	wait(5)
+	Screen.LaneConnection.Connecting.Visible = true
+	Tri.Transparency = 0.2
+	Tri.Material = Enum.Material.Neon
+	Tri.Color = Color3.fromRGB(199, 255, 16)
+	wait(10)
+	Screen.LaneConnection.Connecting.Visible = false
+	Screen.LaneConnection.Done.Visible = true
+	Tri.Transparency = 0.2
+	Tri.Material = Enum.Material.Neon
+	Tri.Color = Color3.fromRGB(255, 255, 255)
+	wait(3)
+	Screen.LaneConnection.Visible = false
+	Screen.Application.Visible = true
+	Screen.Application.StartScreen.Visible = true
+	Screen.Application.Interventions.Visible = true
+	Screen.Application.Interventions.SystemMsgfoot.Visible = true
+	wait(5)
+	Screen.Application.Footer.Visible = true
+	Screen.Application.Interventions.SystemMsgfoot.Visible = false
+	Screen.Application.Interventions.Visible = false
+	Scan.Disabled = false
+	Cscreen.LaneBoot.Visible = false
+	Cscreen.Idle.Visible = true
+	Tri.Color = Color3.fromRGB(2, 255, 2)
+	STri.Color = Color3.fromRGB(2, 255, 2)
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://12830273010"
+	sound.Looped = false
+	sound.Parent = workspace
+	sound:Play()
+	sound.Volume = 5
+else
+	local Cscreen = script.Parent["Reader V2"].Screen.SurfaceGui
+	warn("TRG | User Or Group not whitelisted for product: Self Checkout System")	
+	Screen.Boot.LCS_Inv.Visible = true
+	Cscreen.lcs_inv.Visible = true
+	if Mstr.trionlcz then
+		Tri.Transparency = 0.2
+		Tri.Material = Enum.Material.Neon
+		Tri.Color = Color3.fromRGB(255, 0, 0)
+		STri.Transparency = 0.2
+		STri.Material = Enum.Material.Neon
+		STri.Color = Color3.fromRGB(255, 0, 0)
+	end
+end
+
+	Screen.Application.StartScreen.Start.Start.MouseButton1Click:Connect(function() -- Attach a function to your MouseButton1Click RBXScriptSignal
+
+		Screen.Application.StartScreen.Visible = false
+		Screen.Application.ScanScreen.Visible = true
+		Screen.Application.ScanScreen.Start.Visible = true
+	end)
+
+
+
+	Screen.Utility.Main.btn_Option5.MouseButton1Click:Connect(function()
+		local Screen = script.Parent.Parent.Parent.Parent.Parent.SurfaceGui
+		Screen.LaneConnection.please.Visible = false
+		Screen.LaneConnection.Done.Visible = false
+		Screen.LaneConnection.Connecting.Visible = false	
+		Screen.Application.Footer.Visible = false
+		Screen.Utility.Main.Visible = false	
+		Screen.Application.Visible = false
+		Screen.Utility.Visible = false
+		Screen.Boot.Visible = true
+		Screen.Boot.Stage1.Visible = true
+		wait(5)
+		Screen.Boot.Stage1.Visible = false
+		Screen.Boot.Stage2.Visible = true
+		wait(5)
+		Screen.Boot.Stage2.Visible = false
+		Screen.Boot.Stage3.Visible = true
+		wait(2)
+		warn("Boot Done Connecting To Lanes")
+		Screen.Boot.Visible = false
+		Screen.LaneConnection.Visible = true
+		Screen.LaneConnection.please.Visible = true
+		wait(5)
+		Screen.LaneConnection.Connecting.Visible = true
+		wait(10)
+		Screen.LaneConnection.Connecting.Visible = false
+		Screen.LaneConnection.Done.Visible = true
+		wait(3)
+		Screen.LaneConnection.Visible = false
+		Screen.Application.Visible = true
+		Screen.Application.StartScreen.Visible = true
+		Screen.Application.Interventions.Visible = true
+		Screen.Application.Interventions.SystemMsgfoot.Visible = true
+		wait(5)
+		Screen.Application.Footer.Visible = true
+		Screen.Application.Interventions.SystemMsgfoot.Visible = false
+		Screen.Application.Interventions.Visible = false
+	end)
+	
+	
+	
+	
+	
+	Screen.Utility.Main.Shutdown.MouseButton1Click:Connect(function()
+		Tri.Transparency = 0.2
+		Tri.Material = Enum.Material.SmoothPlastic
+		Tri.Color = Color3.fromRGB(99, 99, 99)
+		STri.Transparency = 0.2
+		STri.Material = Enum.Material.SmoothPlastic
+		STri.Color = Color3.fromRGB(99, 99, 99)
+		Scan.Disabled = true
+		Screen.Utility.Main.Visible = false
+		Screen.Utility.Shutdown.Visible = true
+		wait(10)
+		Screen.Utility.Shutdown.Visible = false
+		--Cscreen.Idle.Visible = false
+		print("ShutDown Complete")
+		script.Parent["Scan Handeler2"].Disabled = false
+		script.Disabled = true
+	end)
+	
+	
+	
+
+Screen.Application.ScanScreen.SideFrame.TextButton.MouseButton1Click:Connect(function()
+	Tri.Transparency = 0.2
+	Tri.Material = Enum.Material.SmoothPlastic
+	Tri.Color = Color3.fromRGB(99, 99, 99)
+	STri.Transparency = 0.2
+	STri.Material = Enum.Material.SmoothPlastic
+	STri.Color = Color3.fromRGB(255, 255, 255)
+	Cscreen.Idle.Visible = false
+	Cscreen.LaneBoot.Visible = false
+	Cscreen.Pay.Visible = true
+	Screen.Application.Interventions.Visible = true
+	Screen.Application.Interventions.ContinueOnR.Visible = true
+	script.Parent["Scan Handeler"].Disabled = true
+	script.Parent["Reader V2"].Touchpart.Script.Disabled = false
+	
+	
+	
+end)
